@@ -1,4 +1,141 @@
+:root {
+  --color-one: #000;
+  --color-two: #db457d;
+  --color-three: #d2668e;
+  --color-four: #c88a8a;
+  --color-five: #fff;
+  --font-one: 'Lato', sans-serif;
+}
+
 * {
-  background-color: red;
-  color: wheat;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-one);
+  color: var(--color-five);
+}
+
+body {
+  background-color: var(--color-two);
+  color: var(--color-one);
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.search-div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.anime-list-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  padding: 2rem;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid var(--color-three);
+  border-top: 10px solid var(--color-four);
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.anime-card {
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.anime-image {
+  height: 3rem;
+  object-fit: contain;
+}
+
+.anime-title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.anime-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.anime-card:hover {
+  transform: scale(1.05);
+}
+
+a {
+  color: var(--color-one);
+  text-decoration: none;
+}
+
+.anime-view {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.anime-view-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem;
+  text-align: center;
+}
+
+.anime-view-image {
+  width: 20rem;
+  object-fit: contain;
+  margin: 1rem;
+}
+
+.back-icon {
+  font-size: 2rem;
+  margin: 1rem;
+  cursor: pointer;
+  text-align: start;
+  position: absolute;
+  left: 0;
+  top: 7rem;
 }
