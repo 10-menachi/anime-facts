@@ -73,7 +73,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Coming soon!
+[Live Demo](https://silver-crisp-2f216f.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
