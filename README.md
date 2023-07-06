@@ -17,6 +17,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [🚀 Live Video](#live-video)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -73,6 +74,14 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - Coming soon!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE VIDEO -->
+
+## 🚀 Live Video <a name="live-video"></a>
+
+[Live Video](https://www.loom.com/share/08e77e4206e542e8b92b4405021b9caa?sid=620f7dbb-3347-4b71-973a-923c4f523d27)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
