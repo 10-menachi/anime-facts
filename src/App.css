@@ -139,3 +139,7 @@ a {
   left: 0;
   top: 7rem;
 }
+
+input {
+  color: var(--color-one);
+}
