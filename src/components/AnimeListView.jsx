@@ -7,14 +7,18 @@ import Loading from './Loading';
 const AnimeListView = () => {
   const state = useSelector((state) => state.anime);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchAnime());
   }, [dispatch]);
+
   const animes = state.anime.data;
+
   return (
     <div className="anime-list-view">
-      {!animes && <Loading />}
-      {animes && animes.map((anime) => (
+      {state.loading && <Loading />}
+      {' '}
+      {!state.loading && animes && animes.map((anime) => (
         <AnimeCard
           key={anime.mal_id}
           malId={anime.mal_id}

@@ -27,7 +27,12 @@ const AnimeView = () => {
 
   return (
     <div className="anime-view">
-      <BiArrowBack className="back-icon" onClick={handleBack} />
+      <BiArrowBack
+        id="back-icon"
+        data-testid="back-icon"
+        className="back-icon"
+        onClick={handleBack}
+      />
       <h2 className="anime-view-title">{anime.title}</h2>
       <img className="anime-view-image" src={anime.images.jpg.image_url} alt={anime.title} />
       <p className="anime-view-synopsis">{anime.synopsis}</p>

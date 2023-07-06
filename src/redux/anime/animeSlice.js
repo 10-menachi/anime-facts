@@ -1,7 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  anime: [],
+export const initialState = {
+  anime: {
+    data: [],
+  },
   loading: false,
   error: null,
 };
@@ -16,26 +18,37 @@ const fetchAnime = createAsyncThunk('anime/fetchAnime', async () => {
     return error;
   }
 });
-const animeSlice = createSlice({
+export const animeSlice = createSlice({
   name: 'anime',
   initialState,
-  reducers: {},
-  extraReducers: {
-    [fetchAnime.pending]: (state) => {
-      state.loading = true;
+  reducers: {
+    searchAnime: (state, { payload }) => {
+      const searchTerm = payload.toLowerCase();
+      const search = state.anime.data.filter((anime) => {
+        const animeTitle = anime.title.toLowerCase();
+        return animeTitle.includes(searchTerm);
+      });
+      state.anime.data = search.length ? search : state.anime.data;
     },
-    [fetchAnime.fulfilled]: (state, { payload }) => {
-      state.anime = payload;
-      state.loading = false;
-      state.error = null;
-    },
-    [fetchAnime.rejected]: (state, { payload }) => {
-      state.loading = false;
-      state.error = payload;
-    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchAnime.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchAnime.fulfilled, (state, { payload }) => {
+        state.anime = payload;
+        state.loading = false;
+        state.error = null;
+      })
+      .addCase(fetchAnime.rejected, (state) => {
+        state.loading = false;
+        state.error = 'An error occurred.';
+      });
   },
 });
 
 const animeReducer = animeSlice.reducer;
+export const { searchAnime } = animeSlice.actions;
 export { fetchAnime };
 export default animeReducer;
