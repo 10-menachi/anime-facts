@@ -9,7 +9,7 @@ const AnimeCard = ({
   const ids = [1, 4, 5, 8, 9, 12, 13, 16, 17, 20, 21, 24, 25];
   const style = {
     backgroundBlendMode: 'darken',
-    backgroundColor: ids.includes(styleId) ? '#d2668e' : null,
+    backgroundColor: ids.includes(styleId) ? '#d2668e' : {},
   };
   return (
     <>
