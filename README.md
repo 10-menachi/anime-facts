@@ -244,6 +244,9 @@ If you like this project, please give it a ⭐️!
 
 I would like to thank Microverse for giving me this opportunity to learn and build this project.
 
+I would also like to acknowledge [Nelson Sakwa](https://www.behance.net/sakwadesignstudio), the author
+of [This Design](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
