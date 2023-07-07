@@ -13,20 +13,25 @@ const AnimeListView = () => {
   }, [dispatch]);
 
   const animes = state.anime.data;
+  let styleId = 0;
 
   return (
     <div className="anime-list-view">
       {state.loading && <Loading />}
       {' '}
-      {!state.loading && animes && animes.map((anime) => (
-        <AnimeCard
-          key={anime.mal_id}
-          malId={anime.mal_id}
-          image={anime.images.jpg.image_url}
-          title={anime.title}
-          episodes={anime.episodes}
-        />
-      ))}
+      {!state.loading && animes && animes.map((anime) => {
+        styleId += 1;
+        return (
+          <AnimeCard
+            key={anime.mal_id}
+            malId={anime.mal_id}
+            image={anime.images.jpg.image_url}
+            title={anime.title}
+            episodes={anime.episodes}
+            styleId={styleId}
+          />
+        );
+      })}
     </div>
   );
 };
