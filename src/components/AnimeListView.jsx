@@ -19,19 +19,30 @@ const AnimeListView = () => {
     <div className="anime-list-view">
       {state.loading && <Loading />}
       {' '}
-      {!state.loading && animes && animes.map((anime) => {
-        styleId += 1;
-        return (
-          <AnimeCard
-            key={anime.mal_id}
-            malId={anime.mal_id}
-            image={anime.images.jpg.image_url}
-            title={anime.title}
-            episodes={anime.episodes}
-            styleId={styleId}
-          />
-        );
-      })}
+      {!state.loading
+        && animes
+        && animes.map((anime) => {
+          styleId += 1;
+
+          if (
+            anime.mal_id
+            && anime.images.jpg
+            && anime.title
+            && anime.episodes
+          ) {
+            return (
+              <AnimeCard
+                key={anime.mal_id}
+                malId={anime.mal_id}
+                image={anime.images.jpg.image_url}
+                title={anime.title}
+                episodes={anime.episodes}
+                styleId={styleId}
+              />
+            );
+          }
+          return null;
+        })}
     </div>
   );
 };
